@@ -2,4 +2,4 @@
 ## Group Project for CS441 (Professor Xin Ye) for Fall 2017
 
 Collaborators:
-<wip>
+to be added...
