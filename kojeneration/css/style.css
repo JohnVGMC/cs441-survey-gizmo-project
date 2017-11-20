@@ -22,19 +22,19 @@ background: rgba(0,0,0,.5);
 }
 .user
 {
-width:100px;
-height: 100px;
+width:500px;
+height: 500px;
 border-radius: 50%;
 overflow: hidden;
 position: absolute;
 top: calc(-100px/2);
-left: calc(50% - 55px);
+left: calc(50% - 55px); 
 }
 h2
 {
   margin: 0;
   padding: 0 0 20px;
-  color: #efed40;
+  color : #ff267e;
   text-align: center;
 }
 .loginBox p{
