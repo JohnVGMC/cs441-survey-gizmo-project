@@ -1,3 +1,7 @@
+<?php 
+session_start();
+$_SESSION['status'] = 'logged-out';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +12,17 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <section id="loginBox">
+    <section id="loginBox">
 <div class="loginBox">
-  <img src="./img/usericon.png" class="user">
-  <h2>Login</h2>
+  <a href= "http://www.kojeneration.com/ "><img src="./img/usericon.png" class="user"> </a>
+  <h2>Kojeneration</h2>
     <form action = "process.php" method = "POST">
         <p>
-            <label>Email: </label>
+            <label>Email </label>
             <input type = "text" id = "email" name = "email" />
         </p>
         <p>
-            <label>Password: </label>
+            <label>Password </label>
             <input type = "password" id = "pass" name = "pass" />
         </p>        
         <p>

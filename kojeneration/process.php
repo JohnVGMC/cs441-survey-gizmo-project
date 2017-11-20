@@ -1,4 +1,6 @@
 <?php
+//pass global variables
+session_start();
 
 //get values entered by user
 $email = strip_tags($_POST['email']);
@@ -11,6 +13,7 @@ function test_data($data) {
     return $data;
 }
 
+//"clean up" entered data
 $email = test_data($email);
 $password = test_data($password);
 
@@ -22,12 +25,14 @@ $sql = "SELECT * from admin where email = '$email' and passw = '$password'";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $row = mysqli_fetch_row($result);
 
+//compare entered inputs with database entry
 if($row[3] == $email && $row[4] == $password)
 {
-    echo "Login Success ||| Welcome ".$row[1];
+    $_SESSION['status'] = 'logged-in';
+    header('Location: participants.php');
 }   
 else{
-     echo "Failed to login!";
+     header('Location: index.php');
 }
-    
+
 ?>
