@@ -3,6 +3,7 @@ session_start();
 if($_SESSION['status'] != 'logged-in')
     header("Location: index.php");
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +14,11 @@ if($_SESSION['status'] != 'logged-in')
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <section id="loginBox">
+  <section id="loginBox">
 <div class="loginBox">
-  <a href= "http://www.kojeneration.com/ "><img src="./img/usericon.png" class="user"> </a>
-  <h2>Kojeneration</h2>
-
+  <img src="./img/usericon.png" class="user">
+  <h2>Login</h2>
+    Welcome
 </div>
 </section>
 </body>
