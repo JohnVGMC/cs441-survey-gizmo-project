@@ -7,7 +7,8 @@ if ($_SESSION['status'] != 'logged-in') {
     $_SESSION['api_token_secret'] = "A9GzZ2qU53Xlc";
     $survey_id = strip_tags(trim($_POST['survey_id']));
 	$response_list_url = "https://restapi.surveygizmo.com/v4/survey/" . $survey_id . "/surveyresponse?api_token=".$_SESSION['api_token']."&api_token_secret=".$_SESSION['api_token_secret'];
-	$response_list_json = json_decode(file_get_contents($response_list_url), true);
+    $response_list_json = json_decode(file_get_contents($response_list_url), true);
+    
 }
 ?>
 <!DOCTYPE html>
@@ -26,7 +27,7 @@ if ($_SESSION['status'] != 'logged-in') {
             $response_data = $response_list_json['data'];
             for ($x = 0; $x < $response_count; $x++) {
                 $id = $response_data[$x]['id'];
-                $response_date = $response_data[$x]['datesubmitted'];
+                $response_date = $response_data[$x]['[question(80)]'];
                 $response_status = $response_data[$x]['status'];
                 echo "<div class = \"surveyBox\">";
                 echo "<h3>" . $response_date . " : " . $response_status . "</h3>";
